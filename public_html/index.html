@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Liviu Bouruc">
+    <meta name="description" content="Bug Tracker">
+
+    <title>Buggy</title>
+    <link rel="icon" href="img/bug-ico.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/8f2dcd945c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="modalSettings" class="modal-box">
+        <div class="modal-settings">
+            <h1 class="modal-title">Settings</h1>
+            <p>
+                Enter your name: 
+                <input id="user-name" type="textbox">
+            </p>
+            <div class="modal-menu">
+                <button type="submit" class="btn" onclick="saveSettings()">Save</button>
+                <button type="submit" class="btn" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalView" class="modal-box">
+        <div id="modalView-info" class="modal-view">
+
+        </div>
+    </div>
+
+    <div id="modalAdd" class="modal-box">
+        <div class="modal-add">
+            <h1 class="modal-title">Add Bug</h1>
+            <form class="add-form">
+                <label for="bug-title">Bug Title:</label><br>
+                <input name="b-title" id="modal-b-title" type="text" placeholder="e.g. PC not working"><br>
+                <label for="bug-description">Bug Description:</label><br>
+                <textarea name="b-descript" id="modal-b-descript" placeholder="e.g. Not connected to power"></textarea><br>
+                <div class="modal-menu">
+                    <button type="submit" id="postMBtn" class="btn" onclick="postMBug()" disabled>Add</button>
+                    <button class="btn" onclick="closeModal()">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <nav>
+        <h1 class="nav-title">Buggy</h1>
+        <div class="nav-wrapper">
+            <button onclick="openModalAdd()" class="nav-add"><i class="fas fa-plus ico"></i></button>
+            <button onclick="openSettings()" class="nav-settings"><i class="fas fa-cog ico"></i></button>
+        </div>
+    </nav>
+    
+    <div class="body-layout">
+        <main class="main-list">
+            <header class="greeting-container">
+                <h2 id="greeting">Welcome back! There's your list of bugs:</h2>
+            </header>
+
+            <ul id="bug-list">
+
+            </ul>
+        </main>
+
+        <aside class="add-list">
+            <form class="add-form">
+                <h1>Add Bug</h1>
+                <label for="bug-title">Bug Title:</label><br>
+                <input name="b-title" id="b-title" type="text" placeholder="e.g. PC not working"><br>
+                <label for="bug-description">Bug Description:</label><br>
+                <textarea name="b-descript" id="b-descript" placeholder="e.g. Not connected to power"></textarea><br>
+                <button type="submit" id="postBtn" class="btn" onclick="postBug()" disabled>Add</button>
+            </form>
+        </aside>
+    </div>
+
+    <footer>
+        <p><i class="fas fa-bug"></i> Designed for painful tasks <i class="fas fa-bug"></i></p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
